@@ -4,10 +4,11 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const CONFIG = require('./config/config');
-mongoose.connect(CONFIG.MLAB_AUTH, { useNewUrlParser: true });
+mongoose.connect(CONFIG.DB_AUTH, { useNewUrlParser: true });
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/Users');
+const todosRouter = require('./routes/Todos');
 const app = express();
 
 app.use(logger('dev'));			
@@ -25,7 +26,7 @@ app.use(function(req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
-
+app.use('/todos', todosRouter);
 
 
 module.exports = app;
