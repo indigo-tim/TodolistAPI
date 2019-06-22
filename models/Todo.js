@@ -4,8 +4,12 @@ var Schema = mongoose.Schema;
 
 // create a schema
 var todoSchema = new Schema({
-	name: String
-	
+	name: String,
+	label: String,
+	category: String,
+	dueDate: Number,
+	status: String,
+	notes: String
 });
 
 // the schema is useless so far
