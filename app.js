@@ -20,7 +20,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //MAKE SURE THIS IS RESTRICTED IN PRODUCTION
 app.use(function(req, res, next) {
-	res.header("Access-Control-Allow-Origin", process.env.HEADER_ACCESS_CONTROL_ALLOW_ORIGIN);
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
     next();
 });
 
