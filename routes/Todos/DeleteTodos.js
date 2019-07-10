@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 
 
 module.exports = (req, res) => {
+    console.log(req.body);
     todoSchema.findById(req.body._id, (err, todo) => {
         if(!err && todo) {
             todo.remove((err) => {

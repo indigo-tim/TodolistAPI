@@ -10,6 +10,6 @@ router.get('/', (req, res) => {res.send("Forbidden")});
 router.put('/create', create);
 router.get('/read', read);
 router.patch('/update', update);
-router.delete('/delete', deleteTodos);
+router.post('/delete', deleteTodos);
 
 module.exports = router;
